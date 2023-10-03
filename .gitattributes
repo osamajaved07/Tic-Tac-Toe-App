@@ -1,4 +1,2 @@
 *.dart linguist-detectable=true
-*.cpp linguist-detectable=false
-*.csharp linguist-detectable=false
-CMakeLists.txt linguist-detectable=false
+* linguist-detectable=false
