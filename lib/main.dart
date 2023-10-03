@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
-import 'package:calculator/calculator_screen.dart';
+
+import 'package:calculator/tic_tac_toe.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,13 +16,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Osama App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF3A83B7)),
         useMaterial3: true,
       ),
-      home: CalculatorScreen(),
+      home: TicTacToeScreen(),
+      
     );
+
   }
 }
 
