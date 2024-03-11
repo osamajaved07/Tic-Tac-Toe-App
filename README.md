@@ -24,3 +24,19 @@ Experience the thrill of real-time updates as you watch the scoreboard change wi
 
 **With Tic Tac Toe Challenge, the ultimate gaming adventure awaits. Download now and embark on a journey of strategic battles and endless fun! 🚀**
 
+## Screenshots
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/osamajaved07/Tic-Tac-Toe-App/assets/143210389/348932b6-07e1-4ce1-bd57-38165ef12a95" alt="ss1" width="200"/>
+    </td>
+    <td align="center">
+      <img src="https://github.com/osamajaved07/Tic-Tac-Toe-App/assets/143210389/f54f1877-c4cb-4424-a226-98e1d4a14f05" alt="ss1" width="200"/>
+    </td>
+     <td align="center">
+      <img src="https://github.com/osamajaved07/Tic-Tac-Toe-App/assets/143210389/a92e8bf7-d09b-47b8-bb7b-6b65f47b44de" alt="ss1" width="200"/>
+    </td>
+  </tr>  
+</table>
+
+
