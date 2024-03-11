@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, library_private_types_in_public_api, non_constant_identifier_names
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'score_screen.dart'; // Import the ScoreScreen
 
 class TicTacToeScreen extends StatefulWidget {
@@ -153,20 +155,45 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: App_Bar(),
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-              Color.fromARGB(255, 92, 142, 230),
-              Color.fromARGB(117, 117, 211, 245),
-              Color.fromARGB(255, 63, 232, 151)
-            ])),
-        child: Center(
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                Color.fromARGB(255, 92, 142, 230),
+                Color.fromARGB(117, 117, 211, 245),
+                Color.fromARGB(255, 63, 232, 151)
+              ])),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height: 20),
+
+              AnimatedOpacity(
+                opacity: (winner != null) ? 1.0 : 0.0,
+                duration: Duration(milliseconds: 500),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1.4,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          width: 4, color: Color.fromARGB(255, 2, 255, 200)),
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Center(
+                    child: Text(
+                      (winner == null) ? '' : 'Player $winner wins!',
+                      style: TextStyle(
+                          fontSize: 34,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 0, 0, 0)),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 28),
               Text(
                 'Player $currentPlayer\'s turn',
                 style: TextStyle(
@@ -174,41 +201,29 @@ class _TicTacToeScreenState extends State<TicTacToeScreen> {
                     fontWeight: FontWeight.w500,
                     color: Color.fromARGB(255, 0, 60, 164)),
               ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 50.0),
-                child: buildGameBoard(),
+              SizedBox(height: 16),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildGameBoard(),
+                ],
               ),
-              SizedBox(height: 20),
+
+              SizedBox(height: 40),
               ElevatedButton(
                 onPressed: resetGame,
                 child: Text('Restart Game'),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               ElevatedButton(
                 // Add this button for navigating to the ScoreScreen
                 onPressed: navigateToScoreScreen,
                 child: Text('View Scores'),
               ),
-              SizedBox(height: 40),
-              // Text(
-              //   (winner == null) ? '' : 'Player $winner wins!',
-              //   style: TextStyle(
-              //       fontSize: 24,
-              //       fontWeight: FontWeight.w500,
-              //       color: Color.fromARGB(255, 0, 60, 164)),
-              // ),
-              AnimatedOpacity(
-                opacity: (winner != null) ? 1.0 : 0.0,
-                duration: Duration(milliseconds: 500),
-                child: Text(
-                  (winner == null) ? '' : 'Player $winner wins!',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromARGB(255, 0, 60, 164)),
-                ),
-              ),
+              SizedBox(height: 20),
+
+              //
             ],
           ),
         ),

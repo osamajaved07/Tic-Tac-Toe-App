@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
-
-import 'package:calculator/splash_screen.dart';
-import 'package:calculator/tic_tac_toe.dart';
+import 'package:calculator/screens/splash_screen.dart';
+import 'package:calculator/screens/tic_tac_toe.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +10,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
 
- 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,9 +21,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: SplashScreen(),
-      
     );
-
   }
 }
-

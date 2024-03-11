@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, non_constant_identifier_names
 
-import 'package:calculator/tic_tac_toe.dart';
+import 'package:calculator/screens/tic_tac_toe.dart';
 import 'package:flutter/material.dart';
 
 class ScoreScreen extends StatefulWidget {
@@ -47,20 +47,31 @@ class _ScoreScreenState extends State<ScoreScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Player X Score: $playerXScore',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromARGB(255, 0, 60, 164)),
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Player O Score: $playerOScore',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromARGB(255, 0, 60, 164)),
+              Container(
+                width: MediaQuery.of(context).size.width / 1.4,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        width: 4, color: Color.fromARGB(255, 255, 255, 255)),
+                    borderRadius: BorderRadius.circular(16)),
+                child: Column(
+                  children: [
+                    Text(
+                      'Player X Score: $playerXScore',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 0, 60, 164)),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'Player O Score: $playerOScore',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 0, 60, 164)),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 40),
               ElevatedButton(

@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:calculator/tic_tac_toe.dart';
+import 'package:calculator/screens/tic_tac_toe.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -13,6 +13,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: Container(
+        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
