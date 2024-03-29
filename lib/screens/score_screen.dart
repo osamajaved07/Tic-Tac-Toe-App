@@ -3,6 +3,7 @@
 import 'package:calculator/google_map/location.dart';
 import 'package:calculator/google_map/map_page.dart';
 import 'package:calculator/screens/tic_tac_toe.dart';
+import 'package:calculator/snake_game/homescreen.dart';
 import 'package:flutter/material.dart';
 
 class ScoreScreen extends StatefulWidget {
@@ -110,6 +111,15 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       builder: (context) => MapPage()));
                 },
                 child: Text('Map Page'),
+              ),
+
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => HomeScreen()));
+                },
+                child: Text('Snake game'),
               ),
             ],
           ),
