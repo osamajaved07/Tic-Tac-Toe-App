@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, non_constant_identifier_names
 
 import 'package:calculator/google_map/location.dart';
+import 'package:calculator/google_map/map_page.dart';
 import 'package:calculator/screens/tic_tac_toe.dart';
 import 'package:flutter/material.dart';
 
@@ -101,6 +102,14 @@ class _ScoreScreenState extends State<ScoreScreen> {
                       builder: (context) => MyLocation()));
                 },
                 child: Text('Get current location'),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => MapPage()));
+                },
+                child: Text('Map Page'),
               ),
             ],
           ),
